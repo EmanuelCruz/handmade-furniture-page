@@ -1,0 +1,124 @@
+Abrimos la consola
+Nos colocamos sobre la carpeta de nuestro proyecto
+ingresamos el siguiente comando:
+npm init
+para crear el archivo package.json
+Luego instalamos el modulo webpack
+npm install --save-dev webpack
+que quiere decir --save-dev?
+que no se tome en cuenta a la hora de subirse a produccion
+solo nosotros los desarrolladores vamos a necesitar webpack
+Luego que de finalice creamos el archivo
+webpack.config.js
+Para que sirve?
+Es un archivo para configurar webpack. Solo se hace para 
+aquellos proyectos que queremos tener muy estructurados.
+
+const path = require('path');
+
+module.exports = {
+    entry: '/assets/javascript/entry.js',
+    output: {
+        publicPath: '/',
+        path: path.join(__dirname,'..'),
+        filename: 'dist/javascript/bundle.js'
+    },
+    plugins: [],
+    module: {}
+}
+
+Al mismo tiempo creamos la carpeta assests dentro de nuestro 
+proyecto
+
+Luego instalamos por linea de comando:
+npm install webpack-dev-server --save-dev
+
+Esto nos va a instalar un servidor local donde vamos a poder 
+ejecutar nuestro proyecto.
+
+Como paso final vamos a modificar el archivo package.json para
+que iniciar por comando ("start") nuestro servidor.
+
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --open --config webpack.config.js"
+},
+
+Para inciar nuestra consola, lo hacemos con el siguiente comando:
+npm rum start
+
+En caso de que nos de error y no nos abrar la ventana en nuestro 
+navegador, tenemos que instalar el cliente, tambien en modo de 
+desarrollo:
+
+npm install webpack webpack-cli --save-dev
+
+Ahora necesitamos installar un plugin de html en nuestro webpack 
+en modo de desarrollo:
+
+npm install html-webpack-plugin --save-dev
+
+Vamos configurar nuestro html webpack que instalamos. Para esto 
+vamos al archivo de configuracion e importamos el plugin que 
+agregamos.
+
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
+Y luego vamos a crear un objeto a partir de esta clase HtmlWebpackPlugin
+La cual va a inicializarse con los siguientes parametros:
+
+const htmlWebpack = new HtmlWebpackPlugin({
+    template: './assets/index.template.html',
+    filename: 'index.html'
+});
+
+Tambien vamos a tener que agregar nuestro objeto htmlWebpack
+a la propiedad plugins.
+
+plugins: [htmlWebpack]
+
+Despues vamos a tener que crear los archivos mencionados:
+
+index.template.html
+
+Vamos a apagar y volver a encender el servidor y vemos nuestra 
+pagina en blanco.
+
+para agregar algo a nuestra pagina vamos al archivo inde.template.html 
+y lo modificamos. No necesitamos reiniciar nuestro servidor los 
+cambios se van a aplicar automaticamente.
+
+Ahos si quisieramos usar SASS en nuestro proyecto vamos a 
+necesitar cargar los loaders.
+
+npm install style-loader css-loader sass-loader --save-dev
+
+Luego de esto vamos a tener que configurar nuestro webpack para 
+poder utilizarlo. Esto lo hacemos en la seccion de module del 
+archivo webpack.config.js Vamos a agregar una serie de reglas, 
+que nos va a permitir expecificar extensiones de webpack que 
+tienen que procesar ciertos archivos.
+
+rules: [
+    {
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "sass-loader"],
+    }
+]
+
+Luego vamos a revisar los cambios reiniciando el servidor. 
+Despues de esto vamos a crear una carpeta css dentro de la 
+carpeta assets y un archivos app.scss dentro de la carpeta 
+css. Le agregamos alguna propiedad css para poder 
+visualizarla luego.
+
+Antes vamos a tener que integrar este scss. Vamos a tener 
+que modificar nuestro archivo entry.js
+
+import "../css/app.scss";
+
+Luego instalamos lo siguiente:
+
+npm install node-sass --save-dev
+
+Esto nos va a permitir transformar achivos de sass a css
