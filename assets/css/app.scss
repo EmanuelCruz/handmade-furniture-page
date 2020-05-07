@@ -48,10 +48,21 @@ img {
     "image image image image image image image image image";
 }
 
+.container {
+  grid-column: span 12;
+}
+
 @media (min-width: 960px) {
   .grid-main-area {
     display: grid;
     grid-template-columns: repeat(9, 1fr);
-    grid-template-areas: ". title title image image image image . .";
+    grid-template-areas: "title title title image image image image image image";
+  }
+  .container {
+    //grid-column: span 10;
+    //El span hace que ocupe 10 columnas
+    //si solo pusieramos 10 sin el span, le estariamos diciendo que arranque en la columna 10
+
+    grid-column: 2 / 10;
   }
 }
