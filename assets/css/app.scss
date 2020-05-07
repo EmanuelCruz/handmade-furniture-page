@@ -7,11 +7,10 @@
 }
 
 body {
-  background-color: rgb(20, 20, 20);
+  background-color: $blanco;
   border: 1px solid;
   width: 100vw;
   min-height: 100vh;
-  color: whitesmoke;
 }
 img {
   max-width: 100%;
@@ -52,6 +51,7 @@ img {
 
 .container {
   grid-column: span 12;
+  padding: $big-padding;
 }
 
 @media (min-width: 960px) {
