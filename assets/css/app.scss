@@ -1,20 +1,25 @@
 @import "./modules/variables.scss";
 @import "./modules/_mixin.scss";
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:200,300,400,700&display=swap");
+
+//font-family: "Josefin Sans", sans-serif;
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
 body {
+  @include margin-cero-padding-cero;
   background-color: $blanco;
   border: 1px solid;
   width: 100vw;
   min-height: 100vh;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 figure {
+  @include margin-cero-padding-cero;
+  margin-top: 1em;
   position: relative;
   max-height: 100%;
   img {
@@ -23,14 +28,37 @@ figure {
   figcaption {
     color: rgba($negro, 0.5);
     font-weight: bold;
-    padding: $large-padding;
     text-transform: uppercase;
-    font-size: 2em;
+    font-size: 1.2em;
     position: absolute;
-    bottom: 0px;
-    left: 20px;
+    bottom: 5%;
     z-index: 12;
+    box-sizing: border-box;
+    letter-spacing: 15px;
     @include text-center;
+  }
+}
+
+.btn {
+  padding: $large-padding;
+  position: relative;
+  color: $negro;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  &:before {
+    content: "";
+    position: absolute;
+    background-color: $crema;
+    width: 10%;
+    left: 0px;
+    bottom: 0px;
+    height: 100%;
+    z-index: -1;
+    transition: all 0.25s ease-in;
+  }
+  &:hover::before {
+    width: 100%;
   }
 }
 
@@ -51,38 +79,94 @@ figure {
 
 /*Usando Grid Areas*/
 
-.main-text {
-  grid-area: title;
-}
-
-.main-image {
-  grid-area: image;
-}
-
 .grid-main-area {
   display: grid;
+
   grid-template-columns: repeat(9, 1fr);
   grid-template-areas:
     "title title title title title title title title title"
     "image image image image image image image image image";
+
+  .text {
+    grid-area: title;
+    font-size: 1.2em;
+    font-weight: 300;
+    line-height: 1.5em;
+    h1 {
+      font-weight: inherit;
+      font-size: $big;
+      letter-spacing: 0.3em;
+      line-height: 1.4em;
+    }
+  }
+
+  .image {
+    grid-area: image;
+  }
 }
 
 .container {
+  @include margin-cero-padding-cero;
   grid-column: span 12;
   padding: $big-padding;
+}
+
+.cover {
+  @include absolute-cover;
+  min-height: 400px;
+  background-color: blue;
+}
+
+@media (min-width: 460px) and (max-width: 959px) {
 }
 
 @media (min-width: 960px) {
   .grid-main-area {
     display: grid;
+    margin-top: $big-margin-top;
     grid-template-columns: repeat(9, 1fr);
     grid-template-areas: "title title title image image image image image image";
+  }
+  .text {
+    font-size: 1.2em;
+    font-weight: 300;
+    line-height: 1.5em;
+    h1 {
+      font-weight: inherit;
+      font-size: $big;
+      letter-spacing: 0.3em;
+      line-height: 1.4em;
+    }
   }
   .container {
     //grid-column: span 10;
     //El span hace que ocupe 10 columnas
     //si solo pusieramos 10 sin el span, le estariamos diciendo que arranque en la columna 10
 
-    grid-column: 2 / 10;
+    grid-column: 3 / 11;
+  }
+
+  figure {
+    position: relative;
+    max-height: 100%;
+    margin-top: 0em;
+    img {
+      max-width: 100%;
+    }
+    figcaption {
+      color: rgba($negro, 0.5);
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 2em;
+      position: absolute;
+      bottom: 3%;
+      left: 2%;
+      z-index: 12;
+      box-sizing: border-box;
+      @include text-center;
+    }
+  }
+  .text {
+    margin: 0 20px 0 20px;
   }
 }

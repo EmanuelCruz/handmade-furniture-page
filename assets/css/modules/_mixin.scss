@@ -19,3 +19,8 @@
   left: 0px;
   right: 0px;
 }
+
+@mixin margin-cero-padding-cero {
+  margin: 0;
+  padding: 0;
+}
