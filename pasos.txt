@@ -1,15 +1,23 @@
 Abrimos la consola
-Nos colocamos sobre la carpeta de nuestro proyecto
-ingresamos el siguiente comando:
+Nos colocamos sobre la carpeta de nuestro proyecto y crear 
+el archivo package.json, ingresamos el siguiente comando:
+
 npm init
-para crear el archivo package.json
+
+OBS: Poderiamos usar npm init -y para que me cree el archivo 
+por defecto y nos ahorramos escribirlo desde cero.
+
 Luego instalamos el modulo webpack
+
 npm install --save-dev webpack
+
 que quiere decir --save-dev?
 que no se tome en cuenta a la hora de subirse a produccion
 solo nosotros los desarrolladores vamos a necesitar webpack
 Luego que de finalice creamos el archivo
+
 webpack.config.js
+
 Para que sirve?
 Es un archivo para configurar webpack. Solo se hace para 
 aquellos proyectos que queremos tener muy estructurados.
@@ -31,6 +39,7 @@ Al mismo tiempo creamos la carpeta assests dentro de nuestro
 proyecto
 
 Luego instalamos por linea de comando:
+
 npm install webpack-dev-server --save-dev
 
 Esto nos va a instalar un servidor local donde vamos a poder 
@@ -92,6 +101,9 @@ Ahos si quisieramos usar SASS en nuestro proyecto vamos a
 necesitar cargar los loaders.
 
 npm install style-loader css-loader sass-loader --save-dev
+
+OBS: style-loader css-loader son necesarios para que webpacket 
+pueda procesar el css.
 
 Luego de esto vamos a tener que configurar nuestro webpack para 
 poder utilizarlo. Esto lo hacemos en la seccion de module del 
