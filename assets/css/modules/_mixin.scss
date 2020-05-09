@@ -24,3 +24,19 @@
   margin: 0;
   padding: 0;
 }
+
+@mixin descripcion-imagen {
+  color: rgba($negro, 0.5);
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  position: absolute;
+  bottom: 5%;
+  right: 0;
+  left: 0;
+  z-index: 12;
+  box-sizing: border-box;
+  letter-spacing: 12px;
+  @include text-center;
+  line-height: 1.5em;
+}
