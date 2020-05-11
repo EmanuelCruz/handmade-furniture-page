@@ -125,6 +125,8 @@ figure {
     transform: translateY(20px);
     width: 90%;
     margin: 0 auto;
+    position: relative;
+    z-index: 10;
     h2 {
       margin: 0px;
     }
@@ -146,12 +148,27 @@ figure {
   }
   .image {
     img {
-      max-width: 100%;
-      min-width: 100%;
+      min-height: 100%;
+
+      display: flex;
+      align-items: center;
     }
   }
 }
 
+#slider-texto-content {
+  transition: all 0.6s ease-out;
+  &.hide {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+}
+#slider-imagen {
+  transition: all 0.6s ease-out;
+  &.hide {
+    opacity: 0;
+  }
+}
 .mision {
   align-items: center;
   text-align: justify;

@@ -1,11 +1,14 @@
 export default class Slider {
   //Destructuring pasar los parametros entre {}
   //El constructor esta recibiendo un objeto json
-  constructor({ elements, animationFunc }) {
+  constructor({ elements, animationFunc, speed }) {
     this.elements = elements;
-    this.animatinoFunc = animationFunc;
+    this.animationFunc = animationFunc;
+    this.speed = speed;
+
     this.index = 0;
     this.size = elements.length;
+
     this.prev = this.prev.bind(this);
     this.stop = this.prev.bind(this);
   }
@@ -13,17 +16,17 @@ export default class Slider {
   next() {
     this.index++;
     if (this.index >= this.size) this.index = 0;
-    console.log(this.elements[this.index]);
+    this.animationFunc(this.elements[this.index]);
   }
 
   prev() {
     this.index--;
     if (this.index < 0) this.index = this.size - 1;
-    console.log(this.elements[this.index]);
+    this.animationFunc(this.elements[this.index]);
   }
 
   play() {
-    this.interval = setInterval(this.prev, 5000);
+    this.interval = setInterval(this.prev, this.speed);
   }
   /*
   play() {
@@ -50,11 +53,3 @@ export default class Slider {
     clearInterval(this.interval);
   }
 }
-
-let slider = new Slider({
-  elements: [1, 2, 3, 4, 5],
-});
-
-slider.play();
-
-setTimeout(slider.stop, 5000);
