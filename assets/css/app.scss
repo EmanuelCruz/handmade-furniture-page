@@ -2,8 +2,6 @@
 @import "./modules/_mixin.scss";
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans:200,300,400,700&display=swap");
 
-//font-family: "Josefin Sans", sans-serif;
-
 * {
   box-sizing: border-box;
 }
@@ -50,24 +48,86 @@ figure {
     width: 100%;
   }
 }
+.menu-icono {
+  position: fixed;
+  top: 2em;
+  right: 2em;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+
+.menu {
+  background-color: $blanco;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 100;
+  top: -100vh;
+  @include center-vertical-horizontal;
+  transition: all 0.6s ease-out;
+  opacity: 0.9;
+  &.active {
+    top: 0;
+  }
+  .close {
+    position: absolute;
+    top: 2em;
+    right: 2em;
+    width: 50px;
+    height: 50px;
+    float: right;
+    border-radius: 50%;
+    img {
+      transform: rotate(45deg);
+      height: 50px;
+    }
+  }
+  nav {
+    a {
+      display: block;
+      width: 100vw;
+      text-decoration: none;
+      @include text-center;
+      position: relative;
+      padding: 0.5em 0 0.5em 0;
+      margin-top: 1em;
+      &:first-of-type {
+        margin-top: 0;
+      }
+
+      .main {
+        display: block;
+        font-size: 2em;
+        color: $negro;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100%;
+        opacity: 0.1;
+        background-color: $crema;
+        transition: all 0.2s ease-out;
+        z-index: -1;
+        transform: scale(0);
+      }
+      &:hover::before {
+        transform: scale(1);
+        opacity: 0.5;
+      }
+    }
+  }
+}
 
 .grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
 }
-/*
-      .main-text {
-        grid-column: 1 / 5;
-      }
-      
-      .main-image {
-        grid-column-start: 5;
-        grid-column-end: 12;
-      }
-      */
 
 /*Usando Grid Areas*/
-
 .grid-main-area {
   display: grid;
   margin-bottom: $big-margin-top;
@@ -199,6 +259,12 @@ figure {
       line-height: 2em;
     }
   }
+}
+
+#mapa {
+  width: 100%;
+  min-height: 600px;
+  margin-top: $big-margin-top;
 }
 
 .social {

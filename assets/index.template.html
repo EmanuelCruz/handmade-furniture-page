@@ -6,7 +6,32 @@
     <title>Pagina con Webpack</title>
   </head>
   <body>
-    <section>
+    <div class="menu-icono">
+      <img src="./public/images/menu.svg" alt="boton para abrir menu" />
+    </div>
+    <div class="menu">
+      <a href="#" class="close">
+        <img src="./public/images/cerrar.svg" alt="boton para cerrar menu" />
+      </a>
+      <nav>
+        <a href="#inicio">
+          <span class="main">Inicio</span>
+        </a>
+        <a href="#productos">
+          <span class="main">Productos</span>
+        </a>
+        <a href="#mision">
+          <span class="main">Mision</span>
+        </a>
+        <a href="#mapa">
+          <span class="main">Mapa</span>
+        </a>
+        <a href="#contactos">
+          <span class="main">Contactos</span>
+        </a>
+      </nav>
+    </div>
+    <section id="inicio">
       <div class="grid">
         <div class="container">
           <div class="grid-main-area">
@@ -44,7 +69,7 @@
         </p>
       </div>
     </section>
-    <section>
+    <section id="productos">
       <div class="grid-main-area slider">
         <div class="text">
           <div class="controles">
@@ -81,11 +106,10 @@
         </div>
       </div>
     </section>
-    <section>
+    <section id="mision">
       <div class="grid height-full mision">
         <div class="container">
           <h1>Nuestra misión</h1>
-
           <figure>
             <img
               src="./public/images/sillon-interior-2.jpg"
@@ -108,6 +132,9 @@
       </div>
     </section>
     <section>
+      <div id="mapa"></div>
+    </section>
+    <section id="contactos">
       <div class="grid social">
         <div class="container">
           <p class="titulo">Contactos</p>
@@ -118,5 +145,6 @@
         </div>
       </div>
     </section>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAB6y2i00GsjQ8M0KEOxHCFidHMS0nvri8"></script>
   </body>
 </html>
