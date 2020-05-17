@@ -1,1 +1,139 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Pagina con Webpack</title><link href="./dist/css/main.0e477447c0e0f31e32fa.css" rel="stylesheet"></head><body><div class="menu-icono"><img src="./public/images/menu.svg" alt="boton para abrir menu"/></div><div class="menu"><a href="#" class="close"><img src="./public/images/cerrar.svg" alt="boton para cerrar menu"/></a><nav><a href="#inicio"><span class="main">Inicio</span> </a><a href="#productos"><span class="main">Productos</span> </a><a href="#mision"><span class="main">Mision</span> </a><a href="#mapa"><span class="main">Mapa</span> </a><a href="#contactos"><span class="main">Contactos</span></a></nav></div><section id="inicio"><div class="grid"><div class="container"><div class="grid-main-area"><div class="text"><h1>Muebles Caceros</h1><p>Muebles caseros de la mejor calidad, con estilo y diseño. Se realizan con mucha dedicación, prestando atención a cada detalle para que tenga una terminación única y vos sientas la diferencia.</p><p>Nuestro objetivo es que nuestros clientes vuelvan a elegirnos.</p><a href="#" class="btn">Ver más</a></div><div class="image"><figure><img src="./public/images/sillon-exterior-1.webp" alt="cama de palets"/><figcaption>comodidad y descanso</figcaption></figure></div></div></div></div></section><section><div class="cover parallax"><p>La comodidad de una cama artesanal <span>El descanso más placentero.</span></p></div></section><section id="productos"><div class="grid-main-area slider"><div class="text"><div class="controles"><img src="./public/images/back.svg" alt="flecha izquierda" class="retroceder"/> <img src="./public/images/next.svg" alt="flecha derecha" class="avanzar"/></div><header><div id="slider-texto-content"><p id="slider-subtitulo" class="separador">Sillones</p><h2 id="slider-titulo">Sillon individual</h2><p id="slider-texto">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus rerum delectus officiis similique, reiciendis in quasi, sapiente hic fugit repellat dolore minus iure saepe ex nisi a adipisci ipsum! Dolore?</p></div></header></div><div class="image"><img id="slider-imagen" src="./public/images/sillon-unico.jpg" alt="sillon individual"/></div></div></section><section id="mision"><div class="grid height-full mision"><div class="container"><h1>Nuestra misión</h1><figure><img src="./public/images/sillon-interior-2.jpg" alt="Imagen de mueble para salon"/></figure><p>La misión de Muebles Caceros es crear muebles para transformar su hogar, en su lugar en el mundo. Esto lo logramos con nuestros diseños innovadores de alta calidad, comodidad y duración. También creemos firmemente en la relación con nuestro cliente, por eso nuestro servicio nos importa, y cuidamos de el, excediendo constantemente sus expectativas.</p><p>Creemos en comodidad no solo de nuestros muebles, sino también de nuestro servicio.</p></div></div></section><section><div id="mapa"></div></section><section id="contactos"><div class="grid social"><div class="container"><p class="titulo">Contactos</p><a href="" class="btn">Mail</a> <a href="" class="btn">Twitter</a> <a href="" class="btn">Facebook</a> <a href="" class="btn">Instagram</a></div></div></section><script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAB6y2i00GsjQ8M0KEOxHCFidHMS0nvri8"></script><script src="./dist/javascript/bundle.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Pagina con Webpack</title>
+    <link href="./dist/css/main.0e477447c0e0f31e32fa.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="menu-icono">
+      <img src="./public/images/menu.svg" alt="boton para abrir menu" />
+    </div>
+    <div class="menu">
+      <a href="#" class="close"
+        ><img src="./public/images/cerrar.svg" alt="boton para cerrar menu"
+      /></a>
+      <nav>
+        <a href="#inicio"><span class="main">Inicio</span> </a
+        ><a href="#productos"><span class="main">Productos</span> </a
+        ><a href="#mision"><span class="main">Mision</span> </a
+        ><a href="#mapa"><span class="main">Mapa</span> </a
+        ><a href="#contactos"><span class="main">Contactos</span></a>
+      </nav>
+    </div>
+    <section id="inicio">
+      <div class="grid">
+        <div class="container">
+          <div class="grid-main-area">
+            <div class="text">
+              <h1>Muebles Caceros</h1>
+              <p>
+                Muebles caseros de la mejor calidad, con estilo y diseño. Se
+                realizan con mucha dedicación, prestando atención a cada detalle
+                para que tenga una terminación única y vos sientas la
+                diferencia.
+              </p>
+              <p>
+                Nuestro objetivo es que nuestros clientes vuelvan a elegirnos.
+              </p>
+              <a href="#" class="btn">Ver más</a>
+            </div>
+            <div class="image">
+              <figure>
+                <img
+                  src="./public/images/sillon-exterior-1.webp"
+                  alt="cama de palets"
+                />
+                <figcaption>comodidad y descanso</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="cover parallax">
+        <p>
+          La comodidad de una cama artesanal
+          <span>El descanso más placentero.</span>
+        </p>
+      </div>
+    </section>
+    <section id="productos">
+      <div class="grid-main-area slider">
+        <div class="text">
+          <div class="controles">
+            <img
+              src="./public/images/back.svg"
+              alt="flecha izquierda"
+              class="retroceder"
+            />
+            <img
+              src="./public/images/next.svg"
+              alt="flecha derecha"
+              class="avanzar"
+            />
+          </div>
+          <header>
+            <div id="slider-texto-content">
+              <p id="slider-subtitulo" class="separador">Sillones</p>
+              <h2 id="slider-titulo">Sillon individual</h2>
+              <p id="slider-texto">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Repellendus rerum delectus officiis similique, reiciendis in
+                quasi, sapiente hic fugit repellat dolore minus iure saepe ex
+                nisi a adipisci ipsum! Dolore?
+              </p>
+            </div>
+          </header>
+        </div>
+        <div class="image">
+          <img
+            id="slider-imagen"
+            src="./public/images/sillon-unico.jpg"
+            alt="sillon individual"
+          />
+        </div>
+      </div>
+    </section>
+    <section id="mision">
+      <div class="grid height-full mision">
+        <div class="container">
+          <h1>Nuestra misión</h1>
+          <figure>
+            <img
+              src="./public/images/sillon-interior-2.jpg"
+              alt="Imagen de mueble para salon"
+            />
+          </figure>
+          <p>
+            La misión de Muebles Caceros es crear muebles para transformar su
+            hogar, en su lugar en el mundo. Esto lo logramos con nuestros
+            diseños innovadores de alta calidad, comodidad y duración. También
+            creemos firmemente en la relación con nuestro cliente, por eso
+            nuestro servicio nos importa, y cuidamos de el, excediendo
+            constantemente sus expectativas.
+          </p>
+          <p>
+            Creemos en comodidad no solo de nuestros muebles, sino también de
+            nuestro servicio.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section><div id="mapa"></div></section>
+    <section id="contactos">
+      <div class="grid social">
+        <div class="container">
+          <p class="titulo">Contactos</p>
+          <a href="" class="btn">Mail</a> <a href="" class="btn">Twitter</a>
+          <a href="" class="btn">Facebook</a>
+          <a href="" class="btn">Instagram</a>
+        </div>
+      </div>
+    </section>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAB6y2i00GsjQ8M0KEOxHCFidHMS0nvri8"></script>
+    <script src="./dist/javascript/bundle.js"></script>
+  </body>
+</html>
