@@ -1,4 +1,4 @@
-const CACHE_NAME = "STORES_CACHES";
+const CACHE_NAME = "STORES_CACHES_2";
 
 //self a referencia a nuestro service workers
 //funcion cuando la services workers se instale
@@ -30,6 +30,24 @@ self.addEventListener("activate", function (ev) {
   );
 });
 
+function searchInCacheOrMakeRequest(request) {
+  const cachePromise = caches.open(CACHE_NAME);
+  const matchPromise = cachePromise.then(function (cache) {
+    return cache.match(request);
+  });
+  return Promise.all([cachePromise, matchPromise]).then(function ([
+    cache,
+    cacheResponse,
+  ]) {
+    const fetchPromise = fetch(request).then(function (fetchResponse) {
+      if (!/^https?:$/i.test(new URL(request.url).protocol)) return;
+      cache.put(request, fetchResponse.clone());
+      return fetchResponse;
+    });
+    return cacheResponse || fetchPromise;
+  });
+}
+
 self.addEventListener("fetch", function (ev) {
   ev.respondWith(
     caches
@@ -45,19 +63,4 @@ self.addEventListener("fetch", function (ev) {
   );
 });
 
-function searchInCacheOrMakeRequest(request) {
-  const cachePromise = caches.open(CACHE_NAME);
-  const matchPromise = cachePromise.then(function (cache) {
-    return cache.match(request);
-  });
-  return Promise.all([cachePromise, matchPromise]).then(function ([
-    cache,
-    cacheRresponse,
-  ]) {
-    const fetchPromise = fetch(request).then(function (fetchResponse) {
-      cache.put(request, fetchResponse.clone());
-      return fetchResponse;
-    });
-    return cacheRresponse || fetchPromise;
-  });
-}
+
