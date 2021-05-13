@@ -231,7 +231,6 @@ figure {
       width: 100%;
       display: flex;
       align-items: center;
-      max-height: 520px;
     }
   }
 }
@@ -331,13 +330,18 @@ figure {
   .text {
     margin: 0 20px 0 20px;
   }
-  
   .slider {
     align-items: center;
     header {
-      transform: translateX(100px);
-      width: 100%;
+      width: 130%;
       min-height: 350px;
+    }
+    .image {
+      height: 590px;
+      img {
+        display: flex;
+        align-items: center;
+      }
     }
   }
 
@@ -350,6 +354,22 @@ figure {
 
       &:last-of-type {
         margin-right: 0px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .slider {
+    header {
+      transform: translateX(100px);
+      width: 100%;
+    }
+    .image {
+      height: 800px;
+      img {
+        display: flex;
+        align-items: center;
       }
     }
   }

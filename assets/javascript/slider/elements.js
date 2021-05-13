@@ -1,13 +1,13 @@
 const elements = [
   {
-    titulo: "Sillon individual",
+    titulo: "Sillón individual",
     subtitulo: "Sillones",
     imagen: "../public/images/sillon-unico.jpg",
     texto:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus rerum delectus officiis similique, reiciendis in quasi...",
   },
   {
-    titulo: "Colgador de llaves",
+    titulo: "Colgador",
     subtitulo: "Estantes",
     imagen: "../public/images/repisa.jpg",
     texto:
