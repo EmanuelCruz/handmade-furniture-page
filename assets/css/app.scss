@@ -252,8 +252,15 @@ figure {
   text-align: justify;
   .container {
     @include texto;
-    figure {
-      float: right;
+    .flex{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .container-figure{
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     p {
       line-height: 2em;
@@ -290,8 +297,8 @@ figure {
   .grid-main-area {
     display: grid;
     margin-top: $big-margin-top;
-    grid-template-columns: repeat(9, 1fr);
-    grid-template-areas: "title title title image image image image image image";
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-areas: "title title title title image image image image image image";
   }
 
   .container {
@@ -299,7 +306,7 @@ figure {
     //El span hace que ocupe 10 columnas
     //si solo pusieramos 10 sin el span, le estariamos diciendo que arranque en la columna 10
 
-    grid-column: 3 / 11;
+    grid-column: 2 / 12;
   }
 
   figure {
@@ -315,15 +322,14 @@ figure {
       bottom: 3%;
     }
   }
+  figure.inicio {
+      top: 50%;
+      transform: translateY(-50%);
+  }
   .text {
     margin: 0 20px 0 20px;
   }
-  .mision {
-    figure {
-      margin-left: 3em;
-    }
-  }
-
+  
   .slider {
     align-items: center;
     header {
@@ -338,7 +344,7 @@ figure {
       display: inline-block;
       max-width: 150px;
       margin-top: 0;
-      margin-right: 6em;
+      margin-right: 4em;
 
       &:last-of-type {
         margin-right: 0px;
