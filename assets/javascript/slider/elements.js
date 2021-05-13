@@ -4,20 +4,20 @@ const elements = [
     subtitulo: "Sillones",
     imagen: "../public/images/sillon-unico.jpg",
     texto:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus rerum delectus officiis similique, reiciendis in quasi, sapiente hic fugit repellat dolore minus iure saepe ex nisi a adipisci ipsum! Dolore?",
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus rerum delectus officiis similique, reiciendis in quasi...",
   },
   {
     titulo: "Colgador de llaves",
     subtitulo: "Estantes",
     imagen: "../public/images/repisa.jpg",
     texto:
-      "Vamos a tener un hermoso colgador de llaves rustico y con posibilidad de almacenar mas cosas.",
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus rerum delectus officiis similique, reiciendis in quasi...",
   },
   {
-    titulo: "Cama",
+    titulo: "Cama Matrimonial",
     subtitulo: "Habitacion",
     imagen: "../public/images/cama-1.png",
-    texto: "Una comoda cama donde se podra disfrutar largas horas de descanso.",
+    texto: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus rerum delectus officiis similique, reiciendis in quasi...",
   },
 ];
 
