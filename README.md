@@ -23,12 +23,12 @@ npm start
 
 ***<u>Header</u>***
 
-![Captura de pantalla 2021-05-14 160715](C:\Users\ema_c\Pictures\Captura de pantalla 2021-05-14 160715.png)
+![Captura de pantalla 2021-05-14 160715](./screenshots/Captura de pantalla 2021-05-14 160715.png)
 
 ***<u>Menu</u>***
 
-![Captura de pantalla 2021-05-14 160801](C:\Users\ema_c\Pictures\Captura de pantalla 2021-05-14 160801.png)
+![Captura de pantalla 2021-05-14 160801](./screenshots/Captura de pantalla 2021-05-14 160801.png)
 
 ***<u>Footer</u>***
 
-![Captura de pantalla 2021-05-14 160829](C:\Users\ema_c\Pictures\Captura de pantalla 2021-05-14 160829.png)
+![Captura de pantalla 2021-05-14 160829](./screenshots/Captura de pantalla 2021-05-14 160829.png)
