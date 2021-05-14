@@ -25,6 +25,11 @@ figure {
     @include descripcion-imagen;
   }
 }
+.navigation-menu {
+  width: 100vw;
+  position: fixed;
+  z-index: 1000;
+}
 
 .btn {
   padding: $large-padding;
@@ -48,14 +53,13 @@ figure {
     width: 100%;
   }
 }
-.menu-icono {
-  position: fixed;
+.contenedor-icono {
+  position: absolute;
   top: 2em;
   right: 2em;
   height: 50px;
   width: 50px;
   cursor: pointer;
-  z-index: 1000;
 }
 
 .menu {
